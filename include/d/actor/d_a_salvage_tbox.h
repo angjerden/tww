@@ -26,7 +26,6 @@ public:
     void draw(JPABaseEmitter*);
 
     /* 0x04 */  s16 field_0x4;
-    /* 0x06 */  s16 field_0x6;
     /* 0x08 */  f32 mpWaterFlatY;
     /* 0x0C */  f32 field_0x0C;
     /* 0x10 */  f32 mpWaterY;
@@ -39,7 +38,7 @@ public:
     /* 0x4C */  f32 mpDepth;
     /* 0x50 */  f32 field_0x50;
     /* 0x54 */  JPABaseEmitter* mpEmitter;
-
+    /* 0x58 */  cXyz position;
 };
 
 class daSTBox_c : public fopAc_ac_c {
@@ -79,13 +78,13 @@ public:
     /* 0x2A4 */ JPABaseEmitter* field_0x2A4;
     /* 0x2A8 */ u8 field_0x2A8[0x2AC - 0x2A8];
     /* 0x2AC */ dPa_rippleEcallBack mRippleCallBack;
-    /* 0x2C0 */ daSTBox_shadowEcallBack_c field_0x2C0;
+    /* 0x2C0 */ daSTBox_shadowEcallBack_c shadowCallback;
     /* 0x318 */ cXyz position;
     /* 0x324 */ cXyz field_0x324;
+    /* 0x334 */ u8 field_0x334;
     /* 0x330 */ u8 field_0x330;
     /* 0x331 */ u8 field_0x331;
     /* 0x332 */ s16 field_0x332;
-    /* 0x334 */ u8 field_0x334;
     /* 0x335 */ u8 field_0x335;
     /* 0x336 */ u8 field_0x336;
     /* 0x337 */ u8 field_0x337[0x338 - 0x337];
