@@ -62,9 +62,9 @@ void daSTBox_shadowEcallBack_c::execute(JPABaseEmitter* emitter) {
         mpEmitter = NULL;
     }
     if (emitter->mMaxFrame == 0 && field_0x4 == 0) {
-        f32 scaleY = mExScaleY;
-        f32 scaleZ = mExScaleZ;
-        emitter->setGlobalTranslation(mExScaleX, scaleY, scaleZ);
+        f32 posY = pos.y;
+        f32 posZ = pos.z;
+        emitter->setGlobalTranslation(pos.x, posY, posZ);
         if (field_0x50 >= 0.0f) {
             yAngle = mpAngle->y;
         } else {
@@ -187,7 +187,7 @@ bool daSTBox_c::_delete() {
     dComIfG_resDelete(&field_0x290, m_arc_name);
     u8 eventReg = dComIfGs_getEventReg(dSv_event_flag_c::UNK_ADFF);
     eventReg += 1;
-    if (field_0x331 == 2){
+    if (field_0x330 == 2){
         dComIfGs_setEventReg(dSv_event_flag_c::UNK_ADFF,eventReg);
     }
     return TRUE;
@@ -365,9 +365,9 @@ bool daSTBox_c::_execute() {
         shadowCallback.setWaterFlatY(waterY + 2.0f);
         shadowCallback.field_0x0C = waterY + 2.0f; 
         shadowCallback.setWaterY(waterY - current.pos.y);
-        shadowCallback.mExScaleX = m1020Pos.x;
-        shadowCallback.mExScaleY = m1020Pos.y;
-        shadowCallback.mExScaleZ = m1020Pos.z;
+        shadowCallback.pos.x = m1020Pos.x;
+        shadowCallback.pos.y = m1020Pos.y;
+        shadowCallback.pos.z = m1020Pos.z;
         
     } else {
         JPABaseEmitter* emitter = shadowCallback.getEmitter();

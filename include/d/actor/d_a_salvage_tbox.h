@@ -10,7 +10,7 @@ public:
     JPABaseEmitter* getEmitter() { return mpEmitter; }
     void setEmitter(JPABaseEmitter* emitter) { mpEmitter = emitter; }
     void setDepth(float depth) { mpDepth = depth; }
-    void setIndirectTexData(f32 exScaleX, f32 exScaleY, f32 exScaleZ) { mExScaleX = exScaleX; mExScaleY = exScaleY; mExScaleZ = exScaleZ; }
+    // void setIndirectTexData(f32 exScaleX, f32 exScaleY, f32 exScaleZ) { mExScaleX = exScaleX; mExScaleY = exScaleY; mExScaleZ = exScaleZ; }
     void setMPos(cXyz& pos) { mPos->x = pos.x; mPos->y = pos.y; mPos->z = pos.z; }
     void setWaterFlatY(float waterFlatY) { mpWaterFlatY = waterFlatY; }
     void setWaterY(float waterY) { mpWaterY = waterY; }
@@ -30,15 +30,13 @@ public:
     /* 0x0C */  f32 field_0x0C;
     /* 0x10 */  f32 mpWaterY;
     /* 0x14 */  JGeometry::TVec3<f32> mPos[3];  // TODO: not sure about this placement
-    /* 0x38 */  f32 mExScaleX;
-    /* 0x3C */  f32 mExScaleY;
-    /* 0x40 */  f32 mExScaleZ;
+    /* 0x38 */  cXyz pos;
     /* 0x44 */  csXyz* mpAngle;
     /* 0x48 */  f32 field_0x48;
     /* 0x4C */  f32 mpDepth;
     /* 0x50 */  f32 field_0x50;
     /* 0x54 */  JPABaseEmitter* mpEmitter;
-    /* 0x58 */  cXyz position;
+    // /* 0x58 */  cXyz position;
 };
 
 class daSTBox_c : public fopAc_ac_c {
